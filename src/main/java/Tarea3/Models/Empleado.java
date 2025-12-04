@@ -8,13 +8,19 @@ public class Empleado {
     private String lastName;
     private String job;
 
+
     public Empleado(String nif, String name, String lastName, String job) {
         this.nif = nif;
         this.name = name;
         this.lastName = lastName;
         this.job = job;
     }
-
+    public void showInfo(){
+        System.out.println("nif = " + nif);
+        System.out.println("name = " + name);
+        System.out.println("lastName = " + lastName);
+        System.out.println("job = " + job);
+    }
     public String getNif() {
         return nif;
     }

@@ -13,7 +13,33 @@ public class Departamento {
         this.budget = budget;
         this.employee = employee;
     }
-
+    public void showInfo(){
+        System.out.println("nombre: " + name);
+        System.out.println("budget = " + budget);
+        for (int i = 0; i < employee.length; i++) {
+            employee[i].showInfo();
+        }
+    }
+    public void showEmployees(){
+        for (Empleado empleado:employee){
+            empleado.showInfo();
+        }
+    }
+    public void employeeNif(String nif) {
+        for (Empleado empleado:employee) {
+            if(empleado.getNif().equals(nif)) {
+                empleado.showInfo();
+            }
+        }
+    }
+    public boolean hasNif(String nif){
+        for (Empleado empleado:employee){
+            if(empleado.getNif().equals(nif)) {
+                return true;
+            }
+        }
+        return false;
+    }
     public String getName() {
         return name;
     }

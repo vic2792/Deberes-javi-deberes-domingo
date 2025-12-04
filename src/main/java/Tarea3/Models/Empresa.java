@@ -13,7 +13,38 @@ public class Empresa {
         this.cif = cif;
         this.departamentos = departamentos;
     }
+    public void findDepartment(String name){
+        for (Departamento departamento: departamentos) {
+            if (departamento.getName().equals(name)){
+                departamento.showInfo();
+            }
+        }
+    }
+    public boolean hasDepartment(String name){
+        for (Departamento departamento: departamentos) {
+            if (departamento.getName().equals(name)){
+                return true;
+            }
+        }
+        return false;
+    }
 
+    public void showEmployees(String name){
+        for(Departamento departamento: departamentos) {
+            if (departamento.getName().equals(name)){
+                departamento.showEmployees();
+            }
+        }
+    }
+    public void findEmployee(String name, String nif){
+        for (Departamento departamento: departamentos) {
+            if(departamento.getName().equals(name)){
+                if (departamento.hasNif(nif)) {
+                    departamento.employeeNif(nif);
+                }
+            }
+        }
+    }
     public String getName() {
         return name;
     }
