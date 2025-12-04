@@ -1,6 +1,7 @@
 package Tarea3.Readers;
 
 import Tarea3.Models.Empleado;
+import Tarea3.Models.Jobs;
 
 import java.util.Scanner;
 
@@ -21,8 +22,22 @@ public class EmpleadoReader {
         String lastName = scanner.nextLine();
 
         System.out.println("cual es su puesto");
-        String job = scanner.nextLine();
+        Jobs job = getjob();
+
         return new Empleado(nif, name, lastName, job);
+
     }
+    private Jobs getjob(){
+        Jobs option;
+        do {
+            Jobs.printMenu();
+            option = Jobs.fromIndex(scanner.nextInt());
+            scanner.nextLine();
+
+
+        }while (option == null);
+        return option;
+    }
+
 
 }

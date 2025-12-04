@@ -6,10 +6,10 @@ public class Empleado {
     private String nif;
     private String name;
     private String lastName;
-    private String job;
+    private Jobs job;
 
 
-    public Empleado(String nif, String name, String lastName, String job) {
+    public Empleado(String nif, String name, String lastName, Jobs job) {
         this.nif = nif;
         this.name = name;
         this.lastName = lastName;
@@ -45,11 +45,11 @@ public class Empleado {
         this.lastName = lastName;
     }
 
-    public String getJob() {
+    public Jobs getJob() {
         return job;
     }
 
-    public void setJob(String job) {
+    public void setJob(Jobs job) {
         this.job = job;
     }
 
